@@ -12,14 +12,12 @@ export default NiceModal.create((props: GlobalLoginModalProps) => {
   const modalInstance = useModal();
   return (
     <Modal
-      title="Basic Modal"
+      title="用户登录"
       open={modalInstance.visible}
       onOk={modalInstance.hide}
       onCancel={modalInstance.hide}
     >
-      <p>Some contents...</p>
-      <p>Some contents...</p>
-      <p>Some contents...</p>
+      登录弹框最佳实践，此处省略一些输入框
     </Modal>
   );
 });
