@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import GlobalProvider from "./provider";
 import GlobalHeader from "@/components/header";
 import GlobalFooter from "@/components/footer";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,8 +14,8 @@ export const metadata: Metadata = {
 };
 /**
  * 默认布局
- * @param param0 
- * @returns 
+ * @param param0
+ * @returns
  */
 export default function RootLayout({
   children,
@@ -25,9 +26,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <GlobalProvider>
-          <GlobalHeader />
-          {children}
-          <GlobalFooter />
+          <AntdRegistry>
+            <GlobalHeader />
+            {children}
+            <GlobalFooter />
+          </AntdRegistry>
         </GlobalProvider>
       </body>
     </html>
