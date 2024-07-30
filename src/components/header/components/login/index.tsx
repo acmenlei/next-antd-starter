@@ -11,5 +11,9 @@ type LoginTriggerProps = {};
  * @returns
  */
 export default function LoginTrigger(props: LoginTriggerProps) {
-  return <Button onClick={showLogin}>登录</Button>;
+  return (
+    <Button type="primary" onClick={showLogin}>
+      登录
+    </Button>
+  );
 }

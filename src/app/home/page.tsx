@@ -7,10 +7,13 @@ import {
   CascaderProps,
   Flex,
   FloatButton,
+  Segmented,
+  Skeleton,
   Space,
 } from "antd";
 import Title from "antd/es/typography/Title";
 import Form from "./components/form";
+import Search from "antd/es/input/Search";
 interface Option {
   value: string;
   label: string;
@@ -93,14 +96,33 @@ export default function HomePage() {
           <p>Card content</p>
         </Card>
       </Space>
-
       <Cascader
         defaultValue={["zhejiang", "hangzhou", "xihu"]}
         options={options}
         onChange={onChange}
       />
-
       <Form />
+      <Skeleton active />
+      <Segmented<string>
+        options={["Daily", "Weekly", "Monthly", "Quarterly", "Yearly"]}
+        onChange={(value) => {
+          console.log(value); // string
+        }}
+      />
+      <>
+        <Search placeholder="input search loading default" loading />
+        <Search
+          placeholder="input search loading with enterButton"
+          loading
+          enterButton
+        />
+        <Search
+          placeholder="input search text"
+          enterButton="Search"
+          size="large"
+        />
+      </>
+      <div className="h-[200px] bg-green-300 hover:bg-green-500 w-full"></div>
     </main>
   );
 }
