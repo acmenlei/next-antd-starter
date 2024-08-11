@@ -14,7 +14,7 @@ import {
 import Title from "antd/es/typography/Title";
 import Form from "./components/form";
 import Search from "antd/es/input/Search";
-import { showPoster } from "@/utils/modal";
+import { showCustomModal, showPoster } from "@/utils/modal";
 interface Option {
   value: string;
   label: string;
@@ -62,6 +62,19 @@ const onChange: CascaderProps<Option>["onChange"] = (value) => {
 export default function HomePage() {
   return (
     <main className="flex gap-5 flex-col p-5 min-h-[calc(100vh-112px)]">
+      <Button
+        className=" self-start"
+        type="primary"
+        onClick={() =>
+          showCustomModal({
+            children: (
+              <div className="bg-white rounded-md p-5">自定义弹框内容</div>
+            ),
+          })
+        }
+      >
+        自定义弹框
+      </Button>
       <Button
         className=" self-start"
         type="primary"

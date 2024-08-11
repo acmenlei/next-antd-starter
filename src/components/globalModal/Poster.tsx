@@ -1,3 +1,4 @@
+import { TRANSPARENT_MODAL } from "@/constants/modal";
 import NiceModal, { useModal } from "@ebay/nice-modal-react";
 import { Modal } from "antd";
 import { IoClose } from "react-icons/io5";
@@ -24,13 +25,7 @@ export default NiceModal.create((props: GlobalPosterModalProps) => {
       onOk={hide}
       onCancel={hide}
       closeIcon={false}
-      styles={{
-        content: {
-          padding: 0,
-          background: "transparent",
-          boxShadow: "none",
-        },
-      }}
+      styles={TRANSPARENT_MODAL}
       style={{ textAlign: "center" }}
       footer={false}
     >
