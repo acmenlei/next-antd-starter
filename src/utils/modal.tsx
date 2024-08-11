@@ -2,7 +2,7 @@ import NiceModal from "@ebay/nice-modal-react";
 import LoginModal from "@/components/GlobalModal/Login";
 import Confirm from "@/components/GlobalModal/Confirm";
 import Poster from "@/components/GlobalModal/Poster";
-import CustomModal from "@/components/GlobalModal/CustomModal";
+import CustomModal from "@/components/GlobalModal/Custom";
 import { ReactNode } from "react";
 
 /**
