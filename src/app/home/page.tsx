@@ -14,6 +14,7 @@ import {
 import Title from "antd/es/typography/Title";
 import Form from "./components/form";
 import Search from "antd/es/input/Search";
+import { showPoster } from "@/utils/modal";
 interface Option {
   value: string;
   label: string;
@@ -61,6 +62,17 @@ const onChange: CascaderProps<Option>["onChange"] = (value) => {
 export default function HomePage() {
   return (
     <main className="flex gap-5 flex-col p-5 min-h-[calc(100vh-112px)]">
+      <Button
+        className=" self-start"
+        type="primary"
+        onClick={() =>
+          showPoster({
+            src: "https://resource.cxyhub.com/homepage/promotion/prompt-2024080901.png",
+          })
+        }
+      >
+        弹出海报广告
+      </Button>
       {/* 主页内容 */}
       <Title>h1. Ant Design</Title>
       <Title level={2}>h2. Ant Design</Title>

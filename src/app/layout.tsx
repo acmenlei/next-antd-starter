@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import GlobalProvider from "./provider";
-import GlobalHeader from "@/components/header";
-import GlobalFooter from "@/components/footer";
+import GlobalHeader from "@/components/Header";
+import GlobalFooter from "@/components/Footer";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "./globals.css";
 
