@@ -10,6 +10,7 @@
 ├─components         当前组件用到的子组件
 ├─store.ts           状态管理
 ├─index.tsx          核心代码
+├─modal.tsx          当前组件使用到的弹框【配合NiceModal使用】
 ├─style.scss         样式
 ├─util.ts            当前组件用到的工具函数
 ├─usexxx.ts          当前组件的 hook，都可以写在同级目录下

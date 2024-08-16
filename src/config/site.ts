@@ -1,3 +1,4 @@
 export const SITE_CONFIG = {
-  title: "lx next starter",
+  title: "编程导航 - 主页",
+  name: "编程导航",
 };
