@@ -1,3 +1,4 @@
+import xss from "xss";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import calendar from "dayjs/plugin/calendar";
@@ -44,8 +45,7 @@ export const formatTime = (
  * @returns
  */
 export const safeHTML = (content?: string) => {
-  const xssTagRegExp = /<(script|iframe|object|embed)[^>]*>[\s\S]*?<\/\1>/gi;
-  return content?.replace(xssTagRegExp, "");
+  return xss(content ?? "");
 };
 /**
  * 睡眠

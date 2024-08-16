@@ -1,4 +1,9 @@
-export const SITE_CONFIG = {
-  title: "编程导航 - 主页",
-  name: "编程导航",
+type SiteConfig = {
+  title: string;
+  layout: "side" | "top";
+};
+
+export const SITE_CONFIG: SiteConfig = {
+  title: "编程导航",
+  layout: "top", // "side" | "top"
 };

@@ -2,8 +2,12 @@
 
 import { showLogin } from "@/utils/modal";
 import { Button } from "antd";
+import { SizeType } from "antd/es/config-provider/SizeContext";
 
-type LoginTriggerProps = {};
+type LoginTriggerProps = {
+  size?: SizeType;
+  className?: string;
+};
 
 /**
  * 登录触发按钮
@@ -11,8 +15,14 @@ type LoginTriggerProps = {};
  * @returns
  */
 export default function LoginTrigger(props: LoginTriggerProps) {
+  const { size = "middle", className } = props;
   return (
-    <Button type="primary" onClick={showLogin}>
+    <Button
+      size={size}
+      className={className}
+      type="primary"
+      onClick={showLogin}
+    >
       登录
     </Button>
   );

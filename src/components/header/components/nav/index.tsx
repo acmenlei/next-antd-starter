@@ -48,7 +48,7 @@ const items: MenuItem[] = [
   },
 ];
 type NavgationProps = {
-  mode?: "horizontal" | "vertical";
+  mode?: "horizontal" | "vertical" | "inline";
 };
 /**
  * 导航栏
@@ -58,8 +58,8 @@ type NavgationProps = {
 export default function Navgation({ mode = "horizontal" }: NavgationProps) {
   return (
     <Menu
-      className=" w-full"
-      style={{ border: "none" }}
+      style={{ lineHeight: 4, border: "none" }}
+      className="w-full h-full"
       mode={mode}
       items={items}
     />
