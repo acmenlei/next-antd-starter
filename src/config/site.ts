@@ -5,5 +5,5 @@ type SiteConfig = {
 
 export const SITE_CONFIG: SiteConfig = {
   title: "编程导航",
-  layout: "top", // "side" | "top"
+  layout: "side", // "side" | "top"
 };

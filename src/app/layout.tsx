@@ -2,11 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import GlobalProvider from "./provider";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
-import "./globals.css";
 import { SITE_CONFIG } from "@/config/site";
-import { LAYOUT_TYPE } from "@/constants";
-import TopLayout from "@/layouts/top";
-import SideLayout from "@/layouts/side";
+import BaseLayout from "@/layouts/base";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,11 +27,12 @@ export default function RootLayout({
       <body className={inter.className}>
         <GlobalProvider>
           <AntdRegistry>
-            {SITE_CONFIG.layout === LAYOUT_TYPE.TOP ? (
+            {/* {SITE_CONFIG.layout === LAYOUT_TYPE.TOP ? (
               <TopLayout children={children} />
             ) : (
               <SideLayout children={children} />
-            )}
+            )} */}
+            <BaseLayout children={children} layout={SITE_CONFIG.layout} />
           </AntdRegistry>
         </GlobalProvider>
       </body>

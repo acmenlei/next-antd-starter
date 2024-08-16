@@ -30,8 +30,12 @@ export const showConfirm = (props: {
  * @param props
  * @returns
  */
-export const showPoster = (props: { src?: string; alt?: string }) =>
-  NiceModal.show(Poster, props);
+export const showPoster = (props: {
+  src?: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+}) => NiceModal.show(Poster, props);
 
 /**
  * 显示自定义弹框内容

@@ -6,11 +6,12 @@ import { SITE_CONFIG } from "@/config/site";
 import { MenuDataItem, ProLayout } from "@ant-design/pro-components";
 import Link from "next/link";
 import { ReactNode } from "react";
-import menus from "../../../config/menu";
 import useLoginUser from "@/hooks/useLoginUser";
+import menus from "../../config/menu";
 
-type SideLayoutProps = {
+type BaseLayoutProps = {
   children: ReactNode;
+  layout?: "side" | "top";
 };
 
 const menuItemFilter = (menuItems: MenuDataItem[], user: any) => {
@@ -46,11 +47,11 @@ const onCollapse = (collapsed: boolean) => {
 };
 
 /**
- * 导航 side 布局【暂时废弃】
+ * 通用布局
  * @param props
  * @returns
  */
-export default function SideLayout({ children }: SideLayoutProps) {
+export default function BaseLayout({ children }: BaseLayoutProps) {
   const loginUser = useLoginUser();
 
   return (
@@ -71,15 +72,3 @@ export default function SideLayout({ children }: SideLayoutProps) {
     </ProLayout>
   );
 }
-
-// <Layout>
-//   <Sider style={siderStyle} trigger={null} collapsible collapsed={false}>
-//     <GlobalHeader layout={LAYOUT_TYPE.SIDE} />
-//   </Sider>
-//   <Layout style={{ marginInlineStart: 200 }}>
-//     <Content>{children}</Content>
-//     <Footer>
-//       <GlobalFooter />
-//     </Footer>
-//   </Layout>
-// </Layout>

@@ -80,7 +80,7 @@ export default function HomePage() {
         type="primary"
         onClick={() =>
           showPoster({
-            src: "https://resource.cxyhub.com/homepage/promotion/prompt-2024080901.png",
+            src: "https://preview.qiantucdn.com/auto_machine/20231104/e3182152-a2bb-40c3-94ae-74137bc6fa00.jpg!qt_w320",
           })
         }
       >
