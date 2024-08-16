@@ -51,14 +51,13 @@ const onCollapse = (collapsed: boolean) => {
  * @param props
  * @returns
  */
-export default function BaseLayout({ children }: BaseLayoutProps) {
+export default function BaseLayout({ children, layout }: BaseLayoutProps) {
   const loginUser = useLoginUser();
 
   return (
     <ProLayout
-      itemIcon={1}
       title={SITE_CONFIG.title}
-      layout="top"
+      layout={layout}
       logo={<GlobalLogo hideTitle />}
       onCollapse={onCollapse}
       fixSiderbar

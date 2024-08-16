@@ -5,6 +5,8 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { SITE_CONFIG } from "@/config/site";
 import BaseLayout from "@/layouts/base";
 import "./globals.css";
+import Error from "./error";
+import { ErrorBoundaryHandler } from "next/dist/client/components/error-boundary";
 
 const inter = Inter({ subsets: ["latin"] });
 
