@@ -56,8 +56,10 @@ export default function BaseLayout({ children, layout }: BaseLayoutProps) {
 
   return (
     <ProLayout
+      // suppressHydrationWarning
       title={SITE_CONFIG.title}
       layout={layout}
+      contentWidth="Fixed"
       logo={<GlobalLogo hideTitle />}
       onCollapse={onCollapse}
       fixSiderbar
@@ -67,7 +69,7 @@ export default function BaseLayout({ children, layout }: BaseLayoutProps) {
       pageTitleRender={false}
       footerRender={() => <GlobalFooter />}
     >
-      {children}
+      <div className=" mx-auto md:w-[1152px] bg-white">{children}</div>
     </ProLayout>
   );
 }

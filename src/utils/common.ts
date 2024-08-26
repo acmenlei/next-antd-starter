@@ -3,6 +3,7 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import calendar from "dayjs/plugin/calendar";
 import advancedFormat from "dayjs/plugin/advancedFormat";
+import duration from "dayjs/plugin/duration";
 import { message } from "antd";
 import { isMobile as __isMobile__ } from "react-device-detect";
 
@@ -10,6 +11,7 @@ import { isMobile as __isMobile__ } from "react-device-detect";
 dayjs.extend(relativeTime);
 dayjs.extend(calendar);
 dayjs.extend(advancedFormat);
+dayjs.extend(duration);
 
 /**
  * 是否是开发环境
@@ -38,7 +40,22 @@ export const formatTime = (
 ) => {
   return dayjs(time).format(format);
 };
-
+/**
+ * 倒计时
+ * @param time
+ * @param format
+ */
+export const CountdownTime = (time: number, lang: string = "zh") => {
+  const _duration = dayjs.duration(time - Date.now(), "milliseconds");
+  const hours = String(Math.floor(_duration.asHours())).padStart(2, "0");
+  const minutes = String(_duration.minutes()).padStart(2, "0");
+  const seconds = String(_duration.seconds()).padStart(2, "0");
+  if (lang === "en") {
+    return `${hours}:${minutes}:${seconds}`;
+  } else {
+    return `${hours}时${minutes}分${seconds}秒`;
+  }
+};
 /**
  * 过滤XSS攻击
  * @param content

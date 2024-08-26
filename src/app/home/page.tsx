@@ -15,6 +15,7 @@ import Title from "antd/es/typography/Title";
 import Form from "./components/form";
 import Search from "antd/es/input/Search";
 import { showCustomModal, showPoster } from "@/utils/modal";
+import { CountdownTime } from "@/utils/common";
 interface Option {
   value: string;
   label: string;
@@ -73,7 +74,7 @@ export default function HomePage() {
           })
         }
       >
-        自定义弹框
+        自定义弹框 {CountdownTime(Date.now() + 38897323)}
       </Button>
       <Button
         className=" self-start"
